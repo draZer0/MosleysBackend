@@ -15,6 +15,7 @@ class CarsTableSeeder extends Seeder
         DB::table('cars')->insert([
         'merk' =>  'Lamborghini',
         'type' => 'Urus',
+        'prijs' => '275.000',
         'bouwjaar' => '2020',
         'categorie' => 'SUV',
         'transmissie' => 'Automaat',

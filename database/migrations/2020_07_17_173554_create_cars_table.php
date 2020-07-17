@@ -18,6 +18,7 @@ class CreateCarsTable extends Migration
             $table->timestamps();
             $table->string('merk');
             $table->string('type');
+            $table->string('prijs');
             $table->string('bouwjaar');
             $table->string('categorie');
             $table->string('transmissie');
