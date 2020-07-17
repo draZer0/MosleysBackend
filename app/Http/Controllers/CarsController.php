@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cars;
+use App\Car;
 
 class CarsController extends Controller
 {
 
     public function api(){
-      return Cars::get()->all();
+      return Car::get()->all();
     }
 
     /**
@@ -20,6 +20,8 @@ class CarsController extends Controller
     public function index()
     {
         //
+        $cars = Car::all();
+        return view('cars.index', compact('cars'));
     }
 
     /**
@@ -47,7 +49,7 @@ class CarsController extends Controller
         'prijs'=>'required'
       ]);
 
-      $contact = new Contact([
+      $cars = new Car([
         'merk' => $request->get('merk'),
         'type' => $request->get('type'),
         'prijs' => $request->get('prijs'),
@@ -58,7 +60,7 @@ class CarsController extends Controller
         'kmstand' => $request->get('kmstand')
       ]);
 
-      $contact->save();
+      $cars->save();
       return redirect('/cars')->with('success', 'Car saved!');
     }
 
@@ -82,6 +84,8 @@ class CarsController extends Controller
     public function edit($id)
     {
         //
+        $cars = Car::find($id);
+        return view('cars.edit', compact('cars'));
     }
 
     /**
@@ -94,6 +98,24 @@ class CarsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'merk'=>'required',
+            'type'=>'required',
+            'prijs'=>'required'
+        ]);
+
+        $cars = Car::find($id);
+        $cars->merk =  $request->get('merk');
+        $cars->type = $request->get('type');
+        $cars->prijs = $request->get('prijs');
+        $cars->bouwjaar = $request->get('bouwjaar');
+        $cars->categorie = $request->get('categorie');
+        $cars->transmissie = $request->get('transmissie');
+        $cars->brandstof = $request->get('brandstof');
+        $cars->kmstand = $request->get('kmstand');
+        $cars->save();
+
+        return redirect('/cars')->with('success', 'Auto updated!');
     }
 
     /**
