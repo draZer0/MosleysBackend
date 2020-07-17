@@ -21,4 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('cars', 'CarsController');
+Route::resource('cars', 'CarsController')->middleware(['auth','role']);;
