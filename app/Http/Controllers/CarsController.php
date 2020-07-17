@@ -127,5 +127,8 @@ class CarsController extends Controller
     public function destroy($id)
     {
         //
+        $cars = Car::find($id);
+        $cars->delete();
+        return redirect('/cars')->with('success', 'Auto verwijderd!');
     }
 }

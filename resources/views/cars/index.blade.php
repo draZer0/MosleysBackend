@@ -2,8 +2,19 @@
 
 @section('main')
 <div class="row">
+  <div class="col-sm-12">  @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}
+    </div>
+  @endif
+</div>
+
 <div class="col-sm-12">
     <h1 class="display-3">Cars</h1>
+    <div>
+    <a style="margin: 19px;" href="{{ route('cars.create')}}" class="btn btn-primary">Nieuwe auto</a>
+    </div>
+
   <table class="table table-striped">
     <thead>
         <tr>
@@ -46,5 +57,8 @@
     </tbody>
   </table>
 <div>
+
+
+
 </div>
 @endsection
