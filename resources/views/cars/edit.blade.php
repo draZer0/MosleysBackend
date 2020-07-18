@@ -57,6 +57,11 @@
                 <input type="text" class="form-control" name="kmstand" value={{ $cars->kmstand }} />
             </div>
 
+            <div class="form-group">
+                <label for="foto">Afbeelding:</label>
+                <input type="text" class="form-control" name="foto" value={{ $cars->foto }} />
+            </div>
+
             <button type="submit" class="btn btn-primary">Update auto</button>
         </form>
     </div>

@@ -57,7 +57,8 @@ class CarsController extends Controller
         'categorie' => $request->get('categorie'),
         'transmissie' => $request->get('transmissie'),
         'brandstof' => $request->get('brandstof'),
-        'kmstand' => $request->get('kmstand')
+        'kmstand' => $request->get('kmstand'),
+        'foto' => $request->get('foto')
       ]);
 
       $cars->save();
@@ -113,6 +114,7 @@ class CarsController extends Controller
         $cars->transmissie = $request->get('transmissie');
         $cars->brandstof = $request->get('brandstof');
         $cars->kmstand = $request->get('kmstand');
+        $cars->foto = $request->get('foto');
         $cars->save();
 
         return redirect('/cars')->with('success', 'Auto updated!');

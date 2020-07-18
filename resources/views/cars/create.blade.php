@@ -56,6 +56,11 @@
               <input type="text" class="form-control" name="kmstand"/>
           </div>
 
+          <div class="form-group">
+              <label for="foto">Afbeelding:</label>
+              <input type="text" class="form-control" name="foto"/>
+          </div>
+
           <button type="submit" class="btn btn-primary-outline">Bevestig auto</button>
       </form>
   </div>

@@ -14,6 +14,7 @@ class Car extends Model
       'categorie',
       'transmissie',
       'brandstof',
-      'kmstand'       
+      'kmstand',
+      'foto'       
   ];
 }

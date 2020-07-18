@@ -20,7 +20,8 @@ class CarsTableSeeder extends Seeder
         'categorie' => 'SUV',
         'transmissie' => 'Automaat',
         'brandstof' => 'Benzine',
-        'kmstand' => '10.000 Km'
+        'kmstand' => '10.000 Km',
+        'foto' => 'https://944challenge.com/wp-content/uploads/2016/02/car-coming-soon-e1456661642418.jpg'
       ]);
     }
 }

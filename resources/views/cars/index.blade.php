@@ -27,6 +27,7 @@
           <td>Transmissie</td>
           <td>Brandstof</td>
           <td>Kmstand</td>
+          <td>Afbeelding</td>
           <td colspan = 2>Actions</td>
         </tr>
     </thead>
@@ -42,6 +43,9 @@
             <td>{{$car->transmissie}}</td>
             <td>{{$car->brandstof}}</td>
             <td>{{$car->kmstand}}</td>
+            <td>
+              <img src="{{$car->foto}}" style="max-width:80px;">
+            </td>
             <td>
                 <a href="{{ route('cars.edit',$car->id)}}" class="btn btn-primary">Bewerk</a>
             </td>

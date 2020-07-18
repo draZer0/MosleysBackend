@@ -24,6 +24,7 @@ class CreateCarsTable extends Migration
             $table->string('transmissie');
             $table->string('brandstof');
             $table->string('kmstand');
+            $table->string('foto');
         });
     }
 
