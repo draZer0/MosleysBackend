@@ -112,11 +112,84 @@
             </div>
         </div>
         <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header ">
+                      <h5 class="card-title">Voertuig toevoegen</h5>
+                      <p class="card-category">Hier kunt u een nieuw voertuig in het systeem zetten.</p>
+                  </div>
+                  <div class="card-body">
+                        @if(session()->get('success'))
+                          <div class="alert alert-success">
+                            {{ session()->get('success') }}
+                          </div>
+                        @endif
+
+                      <div>
+                        <a href="{{ route('cars.create')}}" class="btn btn-primary">Nieuwe auto</a>
+                      </div>
+
+
+                      <div class="table-responsive">
+                          <table class="table table-striped">
+                              <thead class=" text-primary">
+                                  <th>ID</th>
+                                  <th>Merk</th>
+                                  <th>Type</th>
+                                  <th>Prijs</th>
+                                  <th>Bouwjaar</th>
+                                  <th>Categorie</th>
+                                  <th>Transmissie</th>
+                                  <th>Brandstof</th>
+                                  <th>Kilometerstand</th>
+                                  <th>Afbeelding</th>
+                                  <th>Bewerken</th>
+                                  <th>Verwijderen</th>
+                              </thead>
+                              <tbody>
+                                @foreach($cars as $car)
+                                <tr>
+                                    <td>{{$car->id}}</td>
+                                    <td>{{$car->merk}}</td>
+                                    <td>{{$car->type}}</td>
+                                    <td>{{$car->prijs}}</td>
+                                    <td>{{$car->bouwjaar}}</td>
+                                    <td>{{$car->categorie}}</td>
+                                    <td>{{$car->transmissie}}</td>
+                                    <td>{{$car->brandstof}}</td>
+                                    <td>{{$car->kmstand}}</td>
+                                    <td>
+                                      <img src="{{$car->foto}}" style="max-width:80px;">
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('cars.edit',$car->id)}}" class="btn btn-primary">Bewerk</a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('cars.destroy', $car->id)}}" method="post">
+                                          @csrf
+                                          @method('DELETE')
+                                          <button class="btn btn-danger" type="submit">Verwijder</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+
+
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header ">
-                        <h5 class="card-title">Users Behavior</h5>
-                        <p class="card-category">24 Hours performance</p>
+                        <h5 class="card-title">Voertuig toevoegen</h5>
+                        <p class="card-category">Hier kunt u een nieuw voertuig in het systeem zetten.</p>
                     </div>
                     <div class="card-body ">
 
