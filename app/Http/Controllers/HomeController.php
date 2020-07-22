@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Car;
+use DB;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,7 @@ class HomeController extends Controller
     {
         //
         $cars = Car::all();
-        return view('pages.dashboard', compact('cars'));
+        $count = DB::table('cars')->count();
+        return view('pages.dashboard', compact('cars', 'count'));
     }
 }
