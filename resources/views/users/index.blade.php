@@ -128,11 +128,11 @@ The above copyright notice and this permission notice shall be included in all c
                     <div class="logo">
                         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
                             <div class="logo-image-small">
-                                <img src="{{ asset('paper') }}/img/logo-small.png">
+                                <img src="{{ asset('img') }}/mosleys_logo.png">
                             </div>
                         </a>
                         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                            {{ __('Creative Tim') }}
+                            {{ __('Mosley\'s') }}
                         </a>
                     </div>
                     <div class="sidebar-wrapper">
@@ -212,7 +212,7 @@ The above copyright notice and this permission notice shall be included in all c
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="#pablo">{{ __('Paper Dashboard') }}</a>
+                    <a class="navbar-brand" href="#">{{ __('Paper Dashboard') }}</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -233,7 +233,7 @@ The above copyright notice and this permission notice shall be included in all c
                     </form>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link btn-magnify" href="#pablo">
+                            <a class="nav-link btn-magnify" href="#">
                                 <i class="nc-icon nc-layout-11"></i>
                                 <p>
                                     <span class="d-lg-none d-md-block">{{ __('Stats') }}</span>

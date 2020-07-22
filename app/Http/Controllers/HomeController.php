@@ -23,9 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
         $cars = Car::all();
-        $count = DB::table('cars')->count();
-        return view('pages.dashboard', compact('cars', 'count'));
+        $users = DB::table('users')->get();
+
+        // Dashboard variables
+        $cars_count = DB::table('cars')->count();
+        $users_count = DB::table('users')->count();
+
+        return view('pages.dashboard', compact('cars', 'users', 'cars_count', 'users_count'));
     }
 }

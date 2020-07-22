@@ -12,13 +12,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-globe text-warning"></i>
+                                    <i class="nc-icon nc-bus-front-12 text-warning"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Capacity</p>
-                                    <p class="card-title">{{ $count  }}
+                                    <p class="card-category">Voorraad</p>
+                                    <p class="card-title">{{ $cars_count  }}
                                         <p>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i> Update Now
+                            <i class="fa fa-clock-o"></i>Laatste toegevoegd: {{ $cars->last()->created_at}}
                         </div>
                     </div>
                 </div>
@@ -38,13 +38,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-money-coins text-success"></i>
+                                    <i class="nc-icon nc-single-02 text-success"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Revenue</p>
-                                    <p class="card-title">$ 1,345
+                                    <p class="card-category">Medewerkers</p>
+                                    <p class="card-title">{{ $users_count }}
                                         <p>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-calendar-o"></i> Last day
+                            <i class="fa fa-calendar-o"></i>Laatste registratie: {{ $users->last()->created_at}}
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-clock-o"></i> In the last hour
+                            <i class="fa fa-refresh"></i> In the last hour
                         </div>
                     </div>
                 </div>

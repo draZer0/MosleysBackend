@@ -1,11 +1,11 @@
 <div class="sidebar" data-color="white" data-active-color="danger">
     <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="{{ route('page.index', 'dashboard') }}" class="simple-text logo-mini">
             <div class="logo-image-small">
-                <img src="{{ asset('paper') }}/img/logo-small.png">
+                <img src="{{ asset('img') }}/mosleys_logo.png">
             </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="{{ route('page.index', 'dashboard') }}" class="simple-text logo-normal">
             {{ __('Mosley\'s') }}
         </a>
     </div>

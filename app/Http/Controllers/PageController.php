@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
+use DB;
 
 class PageController extends Controller
 {
@@ -25,9 +26,14 @@ class PageController extends Controller
      */
     public function index(string $page)
     {
+
         if (view()->exists("pages.{$page}")) {
             $cars = Car::all();
-            return view("pages.{$page}", compact('cars'));
+            $users = DB::table('users')->get();
+            $cars_count = DB::table('cars')->count();
+            $users_count = DB::table('users')->count();
+
+            return view("pages.{$page}", compact('cars', 'users', 'cars_count', 'users_count'));
         }
 
         return abort(404);
