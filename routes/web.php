@@ -17,8 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('cars', 'CarsController')->middleware(['auth','role']);;
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('cars', 'CarsController')->middleware(['auth','role']);;
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+});
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
+});

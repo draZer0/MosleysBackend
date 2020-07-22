@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a993688a4552c644071256b6b56c39a",
+    "content-hash": "002ea4728fa19e1825d84e90b14d8356",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -698,6 +698,49 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "laravel-frontend-presets/paper",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-frontend-presets/paper-dashboard.git",
+                "reference": "85e0248c7702458de38ab2326254499bc56add13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/paper-dashboard/zipball/85e0248c7702458de38ab2326254499bc56add13",
+                "reference": "85e0248c7702458de38ab2326254499bc56add13",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelFrontendPresets\\PaperPreset\\PaperPresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelFrontendPresets\\PaperPreset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel 5.x Front-end preset for paper dashboard",
+            "homepage": "https://github.com/creativetimofficial/paper-dashboard-laravel",
+            "keywords": [
+                "laravel",
+                "paper",
+                "preset"
+            ],
+            "time": "2020-03-17T12:25:19+00:00"
         },
         {
             "name": "laravel/framework",
