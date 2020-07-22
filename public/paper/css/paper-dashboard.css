@@ -2469,11 +2469,10 @@ p.description {
 }
 
 .card-signup .form-check label {
-  margin-left: 7px;
   padding-left: 38px;
 }
 
-.card-signup .form-check {
+.card-signup .form-check, .card-login .form-check {
   margin-top: 20px;
 }
 

@@ -10,10 +10,10 @@
                 <div class="header-body text-center mb-7">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-md-12 pt-5">
-                            <h1 class="@if(Auth::guest()) text-white @endif">{{ __('Welcome to Paper Dashboard Laravel Live Preview.') }}</h1>
+                            <h1 class="@if(Auth::guest()) text-white @endif">{{ __('Welkom op het Mosley\'s medewerkers paneel!') }}</h1>
 
                             <p class="@if(Auth::guest()) text-white @endif text-lead mt-3 mb-0">
-                                {{ __('Log in and see how you can save more than 90 hours of work with CRUDs for managing: #users, #roles, #items, #categories, #tags and more.') }}
+                                {{ __('Via dit paneel kunt u alle administratieve taken beheren. Voeg voertuigen toe, bekijk de actuele voorraad of vul een verkoopformulier in. Log in of registreer wanneer je nog geen account hebt.') }}
                             </p>
                         </div>
                     </div>
