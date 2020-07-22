@@ -186,18 +186,6 @@ The above copyright notice and this permission notice shall be included in all c
                                     <p>{{ __('Notifications') }}</p>
                                 </a>
                             </li>
-                            <li >
-                                <a href="{{ route('page.index', 'tables') }}">
-                                    <i class="nc-icon nc-tile-56"></i>
-                                    <p>{{ __('Table List') }}</p>
-                                </a>
-                            </li>
-                            <li >
-                                <a href="{{ route('page.index', 'typography') }}">
-                                    <i class="nc-icon nc-caps-small"></i>
-                                    <p>{{ __('Typography') }}</p>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -257,7 +245,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <li class="nav-item btn-rotate dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="nc-icon nc-settings-gear-65"></i>
+                                <i class="nc-icon nc-single-02"></i>
                                 <p>
                                     <span class="d-lg-none d-md-block">{{ __('Account') }}</span>
                                 </p>

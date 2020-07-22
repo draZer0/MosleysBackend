@@ -64,13 +64,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-vector text-danger"></i>
+                                    <i class="nc-icon nc-money-coins text-danger"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Errors</p>
-                                    <p class="card-title">23
+                                    <p class="card-category">Omzet</p>
+                                    <p class="card-title">WIP
                                         <p>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i> In the last hour
+                            <i class="fa fa-wrench"></i> In aanbouw
                         </div>
                     </div>
                 </div>
@@ -90,13 +90,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-favourite-28 text-primary"></i>
+                                    <i class="nc-icon nc-satisfied text-primary"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Followers</p>
-                                    <p class="card-title">+45K
+                                    <p class="card-category">Recensies</p>
+                                    <p class="card-title">WIP
                                         <p>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i> Update now
+                            <i class="fa fa-wrench"></i> In aanbouw
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                         @endif
 
                       <div>
-                        <a href="{{ route('cars.create')}}" class="btn btn-primary">Nieuwe auto</a>
+                        <a href="{{ route('cars.create')}}" class="btn btn-primary btn-wd">Nieuwe auto</a>
                       </div>
 
 
@@ -179,101 +179,8 @@
                   </div>
               </div>
           </div>
-
-
-
-
-
-
-            <div class="col-md-12">
-                <div class="card ">
-                    <div class="card-header ">
-                        <h5 class="card-title">Voertuig toevoegen</h5>
-                        <p class="card-category">Hier kunt u een nieuw voertuig in het systeem zetten.</p>
-                    </div>
-                    <div class="card-body ">
-
-
-
-
-                      <div class="row">
-                        <div class="col-sm-12">  @if(session()->get('success'))
-                          <div class="alert alert-success">
-                            {{ session()->get('success') }}
-                          </div>
-                        @endif
-                      </div>
-
-                      <div class="col-sm-12">
-                          <div>
-                          <a style="margin: 19px;" href="{{ route('cars.create')}}" class="btn btn-primary">Nieuwe auto</a>
-                          </div>
-
-                        <table class="table table-striped">
-                          <thead>
-                              <tr>
-                                <td>ID</td>
-                                <td>Merk</td>
-                                <td>Type</td>
-                                <td>Prijs</td>
-                                <td>Bouwjaar</td>
-                                <td>Categorie</td>
-                                <td>Transmissie</td>
-                                <td>Brandstof</td>
-                                <td>Kmstand</td>
-                                <td>Afbeelding</td>
-                                <td colspan = 2>Actions</td>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              @foreach($cars as $car)
-                              <tr>
-                                  <td>{{$car->id}}</td>
-                                  <td>{{$car->merk}}</td>
-                                  <td>{{$car->type}}</td>
-                                  <td>{{$car->prijs}}</td>
-                                  <td>{{$car->bouwjaar}}</td>
-                                  <td>{{$car->categorie}}</td>
-                                  <td>{{$car->transmissie}}</td>
-                                  <td>{{$car->brandstof}}</td>
-                                  <td>{{$car->kmstand}}</td>
-                                  <td>
-                                    <img src="{{$car->foto}}" style="max-width:80px;">
-                                  </td>
-                                  <td>
-                                      <a href="{{ route('cars.edit',$car->id)}}" class="btn btn-primary">Bewerk</a>
-                                  </td>
-                                  <td>
-                                      <form action="{{ route('cars.destroy', $car->id)}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Verwijder</button>
-                                      </form>
-                                  </td>
-                              </tr>
-                              @endforeach
-                          </tbody>
-                        </table>
-                      <div>
-
-
-
-                      </div>
-
-
-
-
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-history"></i> Updated 3 minutes ago
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
+      </div>
 @endsection
 
 @push('scripts')

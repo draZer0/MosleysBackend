@@ -20,20 +20,21 @@
             <li class="{{ $elementActive == 'profile' ? 'active' : '' }}">
                 <a href="{{ route('profile.edit') }}">
                     <i class="nc-icon nc-tile-56"></i>
-                    <p>{{ __(' Profiel aanpassen ') }}</p>
+                    <p>{{ __(' Profiel aanpassen') }}</p>
                 </a>
             </li>
-            <li class="{{ $elementActive == 'tables' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'tables') }}">
-                    <i class="nc-icon nc-tile-56"></i>
-                    <p>{{ __('Table List') }}</p>
-                </a>
+
+            <li class="{{ $elementActive == 'redirect' ? 'active' : '' }}">
+              <a href="https://folduxrp.nl/mosleys" target="_blank">
+                <i class="nc-icon nc-compass-05"></i>
+                  <p>{{ __('Mosley\'s website') }}</p>
+              </a>
             </li>
-            <li class="{{ $elementActive == 'typography' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'typography') }}">
-                    <i class="nc-icon nc-caps-small"></i>
-                    <p>{{ __('Typography') }}</p>
-                </a>
+            <li class="{{ $elementActive == 'logout' ? 'active' : '' }}">
+              <a onclick="document.getElementById('formLogOut').submit();">
+                <i class="nc-icon nc-button-play"></i>
+                  <p>{{ __('Uitloggen') }}</p>
+              </a>
             </li>
         </ul>
     </div>
