@@ -19,12 +19,12 @@ class CreateCarsTable extends Migration
             $table->string('merk');
             $table->string('type');
             $table->string('prijs');
-            $table->string('bouwjaar');
-            $table->string('categorie');
-            $table->string('transmissie');
-            $table->string('brandstof');
-            $table->string('kmstand');
-            $table->string('foto');
+            $table->string('bouwjaar')->nullable();
+            $table->string('categorie')->nullable();
+            $table->string('transmissie')->nullable();
+            $table->string('brandstof')->nullable();
+            $table->string('kmstand')->nullable();
+            $table->string('foto')->nullable();
         });
     }
 

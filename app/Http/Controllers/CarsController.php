@@ -62,7 +62,7 @@ class CarsController extends Controller
       ]);
 
       $cars->save();
-      return redirect('/cars')->with('success', 'Car saved!');
+      return redirect('/home')->with('success', 'Car saved!');
     }
 
     /**
@@ -117,7 +117,7 @@ class CarsController extends Controller
         $cars->foto = $request->get('foto');
         $cars->save();
 
-        return redirect('/cars')->with('success', 'Auto updated!');
+        return redirect('/home')->with('success', 'Auto updated!');
     }
 
     /**
@@ -131,6 +131,6 @@ class CarsController extends Controller
         //
         $cars = Car::find($id);
         $cars->delete();
-        return redirect('/cars')->with('success', 'Auto verwijderd!');
+        return redirect('/home')->with('success', 'Auto verwijderd!');
     }
 }

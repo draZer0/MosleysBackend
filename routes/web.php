@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('cars', 'CarsController')->middleware(['auth','role']);;
 
 Auth::routes();
 
@@ -33,3 +32,5 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
 });
+
+Route::resource('cars', 'CarsController')->middleware(['auth','role']);

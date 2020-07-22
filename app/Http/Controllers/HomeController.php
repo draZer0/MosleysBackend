@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Car;
 
 class HomeController extends Controller
 {
@@ -15,12 +16,14 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('pages.dashboard');
+        //
+        $cars = Car::all();
+        return view('pages.dashboard', compact('cars'));
     }
 }

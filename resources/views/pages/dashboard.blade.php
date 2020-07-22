@@ -119,58 +119,82 @@
                         <p class="card-category">24 Hours performance</p>
                     </div>
                     <div class="card-body ">
-                        <canvas id=chartHours width="400" height="100"></canvas>
+
+
+
+
+                      <div class="row">
+                        <div class="col-sm-12">  @if(session()->get('success'))
+                          <div class="alert alert-success">
+                            {{ session()->get('success') }}
+                          </div>
+                        @endif
+                      </div>
+
+                      <div class="col-sm-12">
+                          <div>
+                          <a style="margin: 19px;" href="{{ route('cars.create')}}" class="btn btn-primary">Nieuwe auto</a>
+                          </div>
+
+                        <table class="table table-striped">
+                          <thead>
+                              <tr>
+                                <td>ID</td>
+                                <td>Merk</td>
+                                <td>Type</td>
+                                <td>Prijs</td>
+                                <td>Bouwjaar</td>
+                                <td>Categorie</td>
+                                <td>Transmissie</td>
+                                <td>Brandstof</td>
+                                <td>Kmstand</td>
+                                <td>Afbeelding</td>
+                                <td colspan = 2>Actions</td>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @foreach($cars as $car)
+                              <tr>
+                                  <td>{{$car->id}}</td>
+                                  <td>{{$car->merk}}</td>
+                                  <td>{{$car->type}}</td>
+                                  <td>{{$car->prijs}}</td>
+                                  <td>{{$car->bouwjaar}}</td>
+                                  <td>{{$car->categorie}}</td>
+                                  <td>{{$car->transmissie}}</td>
+                                  <td>{{$car->brandstof}}</td>
+                                  <td>{{$car->kmstand}}</td>
+                                  <td>
+                                    <img src="{{$car->foto}}" style="max-width:80px;">
+                                  </td>
+                                  <td>
+                                      <a href="{{ route('cars.edit',$car->id)}}" class="btn btn-primary">Bewerk</a>
+                                  </td>
+                                  <td>
+                                      <form action="{{ route('cars.destroy', $car->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Verwijder</button>
+                                      </form>
+                                  </td>
+                              </tr>
+                              @endforeach
+                          </tbody>
+                        </table>
+                      <div>
+
+
+
+                      </div>
+
+
+
+
                     </div>
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
                             <i class="fa fa-history"></i> Updated 3 minutes ago
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card ">
-                    <div class="card-header ">
-                        <h5 class="card-title">Email Statistics</h5>
-                        <p class="card-category">Last Campaign Performance</p>
-                    </div>
-                    <div class="card-body ">
-                        <canvas id="chartEmail"></canvas>
-                    </div>
-                    <div class="card-footer ">
-                        <div class="legend">
-                            <i class="fa fa-circle text-primary"></i> Opened
-                            <i class="fa fa-circle text-warning"></i> Read
-                            <i class="fa fa-circle text-danger"></i> Deleted
-                            <i class="fa fa-circle text-gray"></i> Unopened
-                        </div>
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-calendar"></i> Number of emails sent
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card card-chart">
-                    <div class="card-header">
-                        <h5 class="card-title">NASDAQ: AAPL</h5>
-                        <p class="card-category">Line Chart with Points</p>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="speedChart" width="400" height="100"></canvas>
-                    </div>
-                    <div class="card-footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Tesla Model S
-                            <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                        </div>
-                        <hr />
-                        <div class="card-stats">
-                            <i class="fa fa-check"></i> Data information certified
                         </div>
                     </div>
                 </div>

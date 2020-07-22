@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Car;
 
 class PageController extends Controller
 {
@@ -25,7 +26,8 @@ class PageController extends Controller
     public function index(string $page)
     {
         if (view()->exists("pages.{$page}")) {
-            return view("pages.{$page}");
+            $cars = Car::all();
+            return view("pages.{$page}", compact('cars'));
         }
 
         return abort(404);
