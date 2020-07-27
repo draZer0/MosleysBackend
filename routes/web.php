@@ -19,13 +19,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('home', 'HomeController')->middleware(['auth','role']);
 
 Route::group(['middleware' => ['auth', 'role']], function () {
-	Route::resource('user', 'UserController', ['except' => ['show']]);
+  Route::resource('home', 'HomeController');
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+});
+
+Route::group(['middleware' => ['auth', 'role']], function () {
+  Route::resource('user', 'UserController', ['except' => ['show']]);
 });
 
 Route::group(['middleware' => ['auth', 'role']], function () {

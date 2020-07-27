@@ -20,10 +20,15 @@
             <li class="{{ $elementActive == 'profile' ? 'active' : '' }}">
                 <a href="{{ route('profile.edit') }}">
                     <i class="nc-icon nc-tile-56"></i>
-                    <p>{{ __(' Profiel aanpassen') }}</p>
+                    <p>{{ __('Profiel aanpassen') }}</p>
                 </a>
             </li>
-
+            <li class="{{ $elementActive == 'user' ? 'active' : '' }}">
+                <a href="{{ route('user.index') }}">
+                    <i class="nc-icon nc-badge"></i>
+                    <p>{{ __('Role management') }}</p>
+                </a>
+            </li>
             <li class="{{ $elementActive == 'redirect' ? 'active' : '' }}">
               <a href="https://folduxrp.nl/mosleys" target="_blank">
                 <i class="nc-icon nc-compass-05"></i>
