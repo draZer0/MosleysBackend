@@ -31,9 +31,11 @@ class PageController extends Controller
             $cars = Car::all();
             $users = DB::table('users')->get();
             $cars_count = DB::table('cars')->count();
+            $cars_sum = DB::table('cars')->sum('prijs');
             $users_count = DB::table('users')->count();
+            $users_with_role = DB::table('users')->where('role','=','admin')->count();
 
-            return view("pages.{$page}", compact('cars', 'users', 'cars_count', 'users_count'));
+            return view("pages.{$page}", compact('cars', 'users', 'cars_count', 'users_count', 'users_with_role', 'cars_sum'));
         }
 
         return abort(404);

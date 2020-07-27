@@ -38,13 +38,39 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-single-02 text-success"></i>
+                                    <i class="nc-icon nc-money-coins text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="col-7 col-md-8">
+                                <div class="numbers">
+                                    <p class="card-category">Voorraad waarde</p>
+                                    <p class="card-title">{{ $cars_sum }}
+                                        <p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-clock-o"></i>Laatste toegevoegd: {{ $cars->last()->created_at}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-5 col-md-4">
+                                <div class="icon-big text-center icon-warning">
+                                    <i class="nc-icon nc-badge text-success"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
                                     <p class="card-category">Medewerkers</p>
-                                    <p class="card-title">{{ $users_count }}
+                                    <p class="card-title">{{ $users_with_role }}
                                         <p>
                                 </div>
                             </div>
@@ -64,13 +90,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-money-coins text-danger"></i>
+                                    <i class="nc-icon nc-single-02 text-danger"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Omzet</p>
-                                    <p class="card-title">WIP
+                                    <p class="card-category">Accounts</p>
+                                    <p class="card-title">{{ $users_count }}
                                         <p>
                                 </div>
                             </div>
@@ -79,33 +105,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-wrench"></i> In aanbouw
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5 col-md-4">
-                                <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-satisfied text-primary"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-8">
-                                <div class="numbers">
-                                    <p class="card-category">Recensies</p>
-                                    <p class="card-title">WIP
-                                        <p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer ">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-wrench"></i> In aanbouw
+                            <i class="fa fa-calendar-o"></i>Laatste registratie: {{ $users->last()->created_at}}
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                         @endif
 
                       <div>
-                        <a href="{{ route('cars.create')}}" class="btn btn-primary btn-wd">Nieuwe auto</a>
+                        <a href="{{ route('home.create')}}" class="btn btn-primary btn-wd">Nieuwe auto</a>
                       </div>
 
 
@@ -162,10 +162,10 @@
                                       <img src="{{$car->foto}}" style="max-width:80px;">
                                     </td>
                                     <td>
-                                        <a href="{{ route('cars.edit',$car->id)}}" class="btn btn-primary">Bewerk</a>
+                                        <a href="{{ route('home.edit',$car->id)}}" class="btn btn-primary">Bewerk</a>
                                     </td>
                                     <td>
-                                        <form action="{{ route('cars.destroy', $car->id)}}" method="post">
+                                        <form action="{{ route('home.destroy', $car->id)}}" method="post">
                                           @csrf
                                           @method('DELETE')
                                           <button class="btn btn-danger" type="submit">Verwijder</button>

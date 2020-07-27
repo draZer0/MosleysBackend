@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware(['auth','role']);
+Route::resource('home', 'HomeController')->middleware(['auth','role']);
 
 Route::group(['middleware' => ['auth', 'role']], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
@@ -32,4 +32,4 @@ Route::group(['middleware' => ['auth', 'role']], function () {
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
 });
 
-Route::resource('cars', 'CarsController')->middleware(['auth','role']);
+// Route::resource('cars', 'CarsController')->middleware(['auth','role']);
