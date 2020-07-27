@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::group(['middleware' => ['auth', 'role']], function () {
   Route::resource('home', 'HomeController');
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
@@ -27,12 +26,10 @@ Route::group(['middleware' => ['auth', 'role']], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
-Route::group(['middleware' => ['auth', 'role']], function () {
+Route::group(['middleware' => ['auth', 'admin']], function () {
   Route::resource('user', 'UserController', ['except' => ['show']]);
 });
 
 Route::group(['middleware' => ['auth', 'role']], function () {
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
 });
-
-// Route::resource('cars', 'CarsController')->middleware(['auth','role']);

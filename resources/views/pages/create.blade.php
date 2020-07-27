@@ -10,7 +10,7 @@
               <div class="card">
                   <div class="card-header ">
                       <h5 class="card-title">Voertuig toevoegen</h5>
-                      <p class="card-category">Hier kunt u voertuig toevoegen.</p>
+                      <p class="card-category">Hier kunt u een nieuw voertuig aanmaken.</p>
                   </div>
                   <div class="card-body">
                         @if(session()->get('success'))
@@ -91,7 +91,7 @@
                           </div>
 
                           <a class="btn btn-primary" href="{{ route('page.index', 'dashboard') }}">Terug naar overzicht</a>
-                          <button type="submit" class="btn btn-primary">Bevestig auto</button>
+                          <button type="submit" class="btn btn-primary">Voertuig toevoegen</button>
                       </form>
 
 

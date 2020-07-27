@@ -39,7 +39,14 @@
 
                             <div class="form-group">
                                 <label for="role">Role:</label>
-                                <input type="text" class="form-control" name="role" value="{{ $users->role }}" />
+                                <!-- <input type="text" class="form-control" name="role" value="{{ $users->role }}" /> -->
+
+                                <select class="custom-select" name="role" required>
+                                    <option value="" disabled selected>--- {{__('Kies een role')}} ---</option>
+                                    <option value="user">Gebruiker</option>
+                                    <option value="employee">Medewerker</option>
+                                    <option value="admin">Admin</option>
+                                </select>
                             </div>
 
 

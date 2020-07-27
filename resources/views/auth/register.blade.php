@@ -80,7 +80,7 @@
                                     @endif
                                 </div>
                                 <div class="card-footer ">
-                                    <button type="submit" class="btn btn-warning btn-round">{{ __('Get Started') }}</button>
+                                    <button type="submit" class="btn btn-warning btn-round">{{ __('Registreren') }}</button>
                                 </div>
                             </form>
                         </div>

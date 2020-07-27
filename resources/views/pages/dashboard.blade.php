@@ -126,7 +126,7 @@
                         @endif
 
                       <div>
-                        <a href="{{ route('home.create')}}" class="btn btn-primary btn-wd">Nieuwe auto</a>
+                        <a href="{{ route('home.create')}}" class="btn btn-primary btn-wd">Nieuw voertuig</a>
                       </div>
 
 

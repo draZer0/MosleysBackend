@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class CheckRole
+class CheckAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class CheckRole
      */
     public function handle($request, Closure $next)
     {
-      if(Auth::user()->role == "employee" or Auth::user()->role == "admin"){
+      if(Auth::user()->role == "admin"){
         return $next($request);
       }
 
