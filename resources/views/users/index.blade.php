@@ -10,7 +10,7 @@
               <div class="card">
                   <div class="card-header ">
                       <h5 class="card-title">Gebruikers</h5>
-                      <p class="card-category">Hier kunt u een nieuw voertuig in het systeem zetten.</p>
+                      <p class="card-category">Hier kunt u als admin de gemaakte accounts bekijken en rollen aanpassen.</p>
                   </div>
                   <div class="card-body">
                         @if(session()->get('success'))

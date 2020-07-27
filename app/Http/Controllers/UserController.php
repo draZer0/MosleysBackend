@@ -43,14 +43,14 @@ class UserController extends Controller
         $users->role = $request->get('role');
         $users->save();
 
-        return redirect('/user')->with('success', 'User bewerkt!');
+        return redirect('/user')->with('success', 'Gebruiker succesvol bewerkt!');
     }
 
     public function destroy($id)
     {
         $users = User::find($id);
         $users->delete();
-        return redirect('/user')->with('success', 'Gebruiker verwijderd!');
+        return redirect('/user')->with('success', 'Gebruiker succesvol verwijderd!');
     }
 
 }

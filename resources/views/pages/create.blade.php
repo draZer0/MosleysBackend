@@ -72,12 +72,23 @@
 
                           <div class="form-group">
                               <label for="transmissie">Transmissie:</label>
-                              <input type="text" class="form-control" name="transmissie"/>
+                              <!-- <input type="text" class="form-control" name="transmissie"/> -->
+                              <select class="custom-select" name="transmissie" required>
+                                  <option value="" disabled selected>--- {{__('Kies een transmissie')}} ---</option>
+                                  <option value="Automaat">Automaat</option>
+                                  <option value="Handgeschakeld">Handgeschakeld</option>
+                              </select>
                           </div>
 
                           <div class="form-group">
                               <label for="brandstof">Brandstof:</label>
-                              <input type="text" class="form-control" name="brandstof"/>
+                              <!-- <input type="text" class="form-control" name="brandstof"/> -->
+                              <select class="custom-select" name="brandstof" required>
+                                  <option value="" disabled selected>--- {{__('Kies een brandstof')}} ---</option>
+                                  <option value="Benzine">Benzine</option>
+                                  <option value="Diesel">Diesel</option>
+                                  <option value="Elektrisch">Elektrisch</option>
+                              </select>
                           </div>
 
                           <div class="form-group">
@@ -90,7 +101,7 @@
                               <input type="text" class="form-control" name="foto"/>
                           </div>
 
-                          <a class="btn btn-primary" href="{{ route('page.index', 'dashboard') }}">Terug naar overzicht</a>
+                          <a class="btn btn-default" href="{{ route('page.index', 'dashboard') }}">Terug naar overzicht</a>
                           <button type="submit" class="btn btn-primary">Voertuig toevoegen</button>
                       </form>
 

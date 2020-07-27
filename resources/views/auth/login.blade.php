@@ -52,7 +52,7 @@
                                      <label class="form-check-label">
                                         <input class="form-check-input" name="remember" type="checkbox" value="" {{ old('remember') ? 'checked' : '' }}>
                                         <span class="form-check-sign"></span>
-                                        {{ __('Onthouden') }}
+                                        {{ __('Onthoud mij') }}
                                     </label>
                                 </div>
                             <!-- </div> -->

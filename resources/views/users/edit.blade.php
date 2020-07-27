@@ -9,8 +9,8 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header ">
-                      <h5 class="card-title">GebruikersEDIT </h5>
-                      <p class="card-category">Hier kunt u een nieuw user in het systeem zetten.</p>
+                      <h5 class="card-title">Gebruiker bewerken</h5>
+                      <p class="card-category">Hier kunt u de naam en de rol van een gebruiker bewerken.</p>
                   </div>
                   <div class="card-body">
                         @if(session()->get('success'))
@@ -50,8 +50,8 @@
                             </div>
 
 
-                            <a class="btn btn-primary" href="{{ route('user.index', 'dashboard') }}">Terug naar overzicht</a>
-                            <button type="submit" class="btn btn-primary">Update user</button>
+                            <a class="btn btn-default" href="{{ route('user.index', 'dashboard') }}">Terug naar overzicht</a>
+                            <button type="submit" class="btn btn-primary">Gebruiker bewerken</button>
                         </form>
 
 

@@ -54,17 +54,42 @@
 
                             <div class="form-group">
                                 <label for="categorie">Categorie:</label>
-                                <input type="text" class="form-control" name="categorie" value="{{ $cars->categorie }}" />
+                                <!-- <input type="text" class="form-control" name="categorie" value="{{ $cars->categorie }}" /> -->
+                                <select class="custom-select" name="categorie">
+                                    <option value="{{ $cars->categorie }}" selected>{{ $cars->categorie }}</option>
+                                    <option value="Compact">Compact</option>
+                                    <option value="Coupe">Coupe</option>
+                                    <option value="Motor">Motor</option>
+                                    <option value="Muscle">Muscle</option>
+                                    <option value="Off-road">Off-road</option>
+                                    <option value="Sedan">Sedan</option>
+                                    <option value="Super">Super</option>
+                                    <option value="Sport">Sport</option>
+                                    <option value="Sport classic">Sport classic</option>
+                                    <option value="SUV">SUV</option>
+                                    <option value="Van">Van</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="transmissie">Transmissie:</label>
-                                <input type="text" class="form-control" name="transmissie" value="{{ $cars->transmissie }}" />
+                                <!-- <input type="text" class="form-control" name="transmissie" value="{{ $cars->transmissie }}" /> -->
+                                <select class="custom-select" name="transmissie">
+                                    <option value="{{ $cars->transmissie }}" selected>{{ $cars->transmissie }}</option>
+                                    <option value="Automaat">Automaat</option>
+                                    <option value="Handgeschakeld">Handgeschakeld</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="brandstof">Brandstof:</label>
-                                <input type="text" class="form-control" name="brandstof" value="{{ $cars->brandstof }}" />
+                                <!-- <input type="text" class="form-control" name="brandstof" value="{{ $cars->brandstof }}" /> -->
+                                <select class="custom-select" name="brandstof">
+                                    <option value="{{ $cars->brandstof }}" selected>{{ $cars->brandstof }}</option>
+                                    <option value="Benzine">Benzine</option>
+                                    <option value="Diesel">Diesel</option>
+                                    <option value="Elektrisch">Elektrisch</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -77,8 +102,8 @@
                                 <input type="text" class="form-control" name="foto" value="{{ $cars->foto }}" />
                             </div>
 
-                            <a class="btn btn-primary" href="{{ route('page.index', 'dashboard') }}">Terug naar overzicht</a>
-                            <button type="submit" class="btn btn-primary">Bewerk voertuig</button>
+                            <a class="btn btn-default" href="{{ route('page.index', 'dashboard') }}">Terug naar overzicht</a>
+                            <button type="submit" class="btn btn-primary">Voertuig bewerken</button>
                         </form>
 
 
